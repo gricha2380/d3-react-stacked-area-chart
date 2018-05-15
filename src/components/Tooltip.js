@@ -9,7 +9,7 @@ function getDateString(dateObject) {
   let dateString = '';
   if(dateObject) {
     dateObject = new Date(dateObject);
-    dateString = dateObject.getFullYear() + '-' +(dateObject.getMonth() + 1) + '-' + dateObject.getDate();
+    dateString = `${(dateObject.getMonth() + 1)}-${dateObject.getDate()}-${dateObject.getFullYear()}`;
   }
   return dateString;
 }

@@ -134,16 +134,16 @@ class AreaChart extends Component {
     y.domain([0,max]);
     y2.domain([0,max]);
 
-    function make_y_gridlines() {
-      return d3.axisLeft(y).ticks(6);
-    }
+    // function make_y_gridlines() {
+    //   return d3.axisLeft(y).ticks(6);
+    // }
 
-    g.append("g")
-      .attr("class", "grid")
-      .call(make_y_gridlines()
-          .tickSize(-width)
-          .tickFormat("")
-    );
+    // g.append("g")
+    //   .attr("class", "grid")
+    //   .call(make_y_gridlines()
+    //       .tickSize(-width)
+    //       .tickFormat("")
+    // ); 
 
     let focus = g.selectAll('.focus')
       .data(stack(data))
@@ -195,9 +195,9 @@ class AreaChart extends Component {
       .attr('transform', 'translate(0,' + height + ')')
       .call(xAxis);
 
-    g.append('g')
-      .attr('class', 'axis axis--y')
-      .call(yAxis);
+    // g.append('g')
+    //   .attr('class', 'axis axis--y')
+    //   .call(yAxis);
 
     let context = g.selectAll('.context')
       .data(stack(data))
