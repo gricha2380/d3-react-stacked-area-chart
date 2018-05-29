@@ -17,7 +17,9 @@ function getDateString(dateObject) {
 function getDataString(metric, value, date) {
   let dataString = '';
   if(metric && value && date) {
-    dataString = value + ' "' + metric + '" incidents reported on ' + date;
+    dataString = `${metric} - 
+    ${value} plays 
+    ${date}`;
   }
   return dataString;
 }

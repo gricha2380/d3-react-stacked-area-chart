@@ -4,7 +4,7 @@ class GradientBorder extends React.Component {
   render() {
     let gradientStyle = {
       width: '80px',
-      height: '500px',
+      height: '600px',
       position: 'absolute',
       zIndex: '1',
       background: 'rgba(255,255,255,0)',

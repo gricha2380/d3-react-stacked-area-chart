@@ -7,7 +7,7 @@ import HoverLine from './HoverLine';
 import * as dataTransformer from './../utilities/DataTransformer.js';
 
 const totalWidth = window.innerWidth-50;
-const totalHeight = 500;
+const totalHeight = 600;
 const chartStyles = {
   position: 'absolute',
 };
@@ -18,7 +18,7 @@ const margin = {
   left: 40
 };
 const margin2 = {
-  top: 400,
+  top: totalHeight-100,
   right: 20,
   bottom: 50,
   left: 40
@@ -30,6 +30,7 @@ const height2 = totalHeight - margin2.top - margin2.bottom;
 let max = 1600;
 
 function fetchData(rawData) {
+  console.log("raw data", rawData)
   const flattenResult = dataTransformer.flattenData(rawData);
   let keys = flattenResult.keys;
 
@@ -39,6 +40,8 @@ function fetchData(rawData) {
     ),
     keys
   );
+
+  console.log("transformed data", tranformedData)
 
   return {
     data: tranformedData,
@@ -97,7 +100,7 @@ class AreaChart extends Component {
       .on('brush end', brushed);
 
     let zoom = d3.zoom()
-      .scaleExtent([1, Infinity])
+      .scaleExtent([1, 10]) //was Infinity
       .translateExtent([[0, 0], [width, height]])
       .extent([[0, 0], [width, height]])
       .on('zoom', zoomed);
